@@ -11,7 +11,7 @@ using UM.Shared.SharedLib.Dtos;
 
 namespace UM.Services.CatalogAPI.Services
 {
-    internal class CategoryService : ICategoryService
+    public class CategoryService : ICategoryService
     {
         private readonly IMongoCollection<Category> _categoryCollection;
         private readonly IMapper _mapper;
@@ -38,10 +38,10 @@ namespace UM.Services.CatalogAPI.Services
             return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);
         }
 
-        public async Task<Response<CategoryDto>> CreateAsync(CategoryCreateDto categoryCreateDto)
+        public async Task<Response<CategoryDto>> CreateAsync(CategoryDto categoryDto)
         {
-            await _categoryCollection.InsertOneAsync(_mapper.Map<Category>(categoryCreateDto));
-            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(categoryCreateDto), 200);
+            await _categoryCollection.InsertOneAsync(_mapper.Map<Category>(categoryDto));
+            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(categoryDto), 200);
         }
 
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace UM.Services.CatalogAPI.Dtos
 {
-    internal class FeatureDto
+    public class FeatureDto
     {
         public int Duration { get; set; }
     }

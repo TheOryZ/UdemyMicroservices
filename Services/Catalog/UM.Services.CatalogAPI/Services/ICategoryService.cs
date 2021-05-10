@@ -7,10 +7,10 @@ using UM.Shared.SharedLib.Dtos;
 
 namespace UM.Services.CatalogAPI.Services
 {
-    internal interface ICategoryService
+    public interface ICategoryService
     {
         Task<Response<List<CategoryDto>>> GetAllAsync();
-        Task<Response<CategoryDto>> CreateAsync(CategoryCreateDto categoryCreateDto);
+        Task<Response<CategoryDto>> CreateAsync(CategoryDto categoryDto);
         Task<Response<CategoryDto>> GetByIdAsync(string id);
     }
 }

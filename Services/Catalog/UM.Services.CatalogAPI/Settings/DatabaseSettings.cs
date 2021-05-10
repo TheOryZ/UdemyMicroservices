@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace UM.Services.CatalogAPI.Settings
 {
-    internal class DatabaseSettings : IDatabaseSettings
+    public class DatabaseSettings : IDatabaseSettings
     {
         public string CourseCollectionName { get; set; }
         public string CategoryCollectionName { get; set; }

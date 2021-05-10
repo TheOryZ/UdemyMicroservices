@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace UM.Services.CatalogAPI.Dtos
 {
-    internal class CourseCreateDto
+    public class CourseCreateDto
     {
         public string Name { get; set; }
         public decimal Price { get; set; }

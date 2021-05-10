@@ -12,14 +12,14 @@ namespace UM.Services.CatalogAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    internal class CategoriesController : CustomBaseController
+    public class CategoriesController : CustomBaseController
     {
         private readonly ICategoryService _categoryService;
-        internal CategoriesController(ICategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
-
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var response = await _categoryService.GetAllAsync();
@@ -32,9 +32,9 @@ namespace UM.Services.CatalogAPI.Controllers
             return CreateActionResultInstance(response);
         }
         [HttpPost]
-        public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
+        public async Task<IActionResult> Create(CategoryDto categoryDto)
         {
-            var response = await _categoryService.CreateAsync(categoryCreateDto);
+            var response = await _categoryService.CreateAsync(categoryDto);
             return CreateActionResultInstance(response);
         }
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace UM.Services.CatalogAPI.Dtos
 {
-    internal class CategoryCreateDto
+    public class CategoryCreateDto
     {
         public string Name { get; set; }
     }
